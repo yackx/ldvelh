@@ -1,5 +1,7 @@
 /**
  * Read a full book in html format, extract and isolate each chapter.
+ * <p/>
+ * The generated chapters serve as a basis for manual integration in the project.
  */
 class ChopChop {
 
@@ -146,7 +148,8 @@ class ChopChop {
         }
 
         // Extract proposed spells and corresponding chapters.
-        // Superflous whitespace have been spotted, can't rely on 5 spells (3 letters + 1 space)
+        // Superflous whitespace have been spotted,
+        // so we can't rely on 5 spells (3 letters + 1 space)
         def spellsMatcher = line =~ /<p align="center"><font face="Courier New">(.*)<\/font><\/p>/
         if (spellsMatcher.matches()) {
             def spellsOrLinks = spellsMatcher[0][1]
@@ -206,7 +209,7 @@ class ChopChop {
             this.next(line)
         }
 
-        println "All read"
+        println "All processed"
         chapterWriter.close()
     }
 
@@ -215,7 +218,7 @@ class ChopChop {
      * Chapters to skip (already processed manually), stored one per line in a file.
      */
     int loadAlreadyProcessed(file) {
-        chaptersToSkip = [] as List
+        chaptersToSkip = []
         file.eachLine { chapter -> chaptersToSkip << (chapter as int) }
         println chaptersToSkip
         return chaptersToSkip.size()
