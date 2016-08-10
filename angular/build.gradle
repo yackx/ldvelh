@@ -25,12 +25,9 @@ task cleanDevReferences << {
     def text = index.text
 
     // less to css
-    text = text.replace(
-            'rel="stylesheet/less" href="css/ldvelh.less"',
-            'rel="stylesheet" href="css/ldvelh.css"')
-    text = text.replace(
-            'rel="stylesheet/less" href="lib/bootstrap/less/bootstrap.less"',
-            'rel="stylesheet" href="lib/bootstrap/less/bootstrap.css"')
+    text = text.replaceAll(
+            ~/rel="stylesheet\/less" href="(.*)\.less"/,
+            'rel="stylesheet" href="$1.css"')
 
     // remove local js (for dev only)
     text = text.replace('<script src="lib/less/less.js"></script>', '')
