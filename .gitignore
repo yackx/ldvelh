@@ -1,0 +1,13 @@
+*.iml
+/target
+.settings
+.project
+.classpath
+.idea
+
+.gradle/
+JasmineAdapter-1.1.2.js
+jasmine-1.1.0.js
+bower_components/
+build/
+publish/

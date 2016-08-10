@@ -1,0 +1,48 @@
+<div id="chapter417-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>417</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <!-- Roll a dice -->
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez un dé&hellip;
+            </div>
+        </div>
+
+        <div ng-show="rolled">
+
+            <div class="row-fluid">
+
+                <!-- Bitten -->
+                <div class="span12" ng-show="specialActions.ch417.dice <= 5">
+                    Vous perdez <strong>{{specialActions.ch417.dice}}</strong>pts d'ENDURANCE
+                </div>
+
+                <!-- Dead -->
+                <div class="span12" ng-show="specialActions.ch417.dice == 6">
+                    Vous avez tiré un 6. Vous mourrez de vos blessures dans quelques minutes.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+
+        <span class="btn btn-primary" ng-show="!rolled"
+              ng-click="rolled = true; vitals.stamina = vitals.stamina - specialActions.ch417.lostStamina">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            Lancez un dé
+        </span>
+
+        <span class="btn btn-primary" ng-show="rolled" data-dismiss="modal">
+            Ok
+        </span>
+    </div>
+
+</div>

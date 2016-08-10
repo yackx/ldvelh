@@ -1,0 +1,32 @@
+<h1>270</h1>
+
+<p>
+    Les abeilles se mettent à voler autour de vous mais vous ne pouvez les chasser, car vous vous servez de vos deux
+    mains pour grimper à l'arbre.
+
+    <a data-target="#chapter270-special" data-toggle="modal">Lancez un dé.</a>
+
+    Si vous obtenez un chiffre entre 1 et 4, vous perdrez autant de points
+    d'ENDURANCE en raison des piqûres que vous infligent les abeilles.
+
+    Si vous faites un 5 ou un 6, vous avez de la
+    chance et les abeilles ne vous piquent pas.
+
+    Lorsque vous atteignez la ruche, vous la détachez de l'arbre et elle
+    tombe sur le sol. Vous redescendez aussitôt et vous ouvrez la ruche : vous pouvez prendre le
+    <a ng-click="addItem('item.food')">miel</a> et la <a ng-click="addItemMultiple('item.wax', 2)">cire</a>
+    qui s'y trouvent. Le miel équivaut à un repas. Rendez-vous à présent au <chapter to="9"></chapter>.
+</p>
+
+<p class="integrator">
+    La cire est comptée comme 2 articles car si vous en enduisez ultérieurement votre épée,
+    vous n'en utiliserez que la moitié.
+</p>
+
+<p class="integrator">
+    Le miel est traité comme un simple repas dans cette version.
+</p>
+
+<div ng-include src="'partials/chapters/01/chapter270-special.html'"></div>
+
+<!-- TODO honey is registered as food -->

@@ -1,0 +1,76 @@
+<h1>123</h1>
+
+<p>
+    <a ng-show="specialActions.ch123.dice <= 4"
+       ng-click="startFight(123, specialActions.ch123.whenDone)"
+       data-toggle="modal" data-target="#fight">
+        Lancez un dé</a>
+
+    <a ng-show="specialActions.ch123.dice > 4"
+       ng-click="goToChapter(specialActions.ch123.whenDone)">
+        Lancez un dé</a>
+
+    pour savoir si vous rencontrez une créature et laquelle :
+</p>
+
+<p class="integrator">
+    Si vous obtenez 5 ou 6, vous serez immédiatement redirigé de là où vous venez ({{specialActions.ch123.whenDone}})
+    sans avoir à combattre. Rendez-vous au
+    <chapter to="{{specialActions.ch123.whenDone}}"></chapter>
+    quand vous avez terminé de combattre.
+</p>
+
+<div class="row-fluid">
+    <div class="span2">
+        CHIFFRE OBTENU
+    </div>
+    <div class="span5">
+        CRÉATURE
+    </div>
+    <div class="span2">
+        HABILETÉ
+    </div>
+    <div class="span2">
+        ENDURANCE
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2">1</div>
+    <div class="span5">Chauve-Souris Géante</div>
+    <div class="span2">5</div>
+    <div class="span2">5</div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2">2</div>
+    <div class="span5">Chauve-Souris Géante</div>
+    <div class="span2">5</div>
+    <div class="span2">5</div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2">3</div>
+    <div class="span5">Chien-Loup</div>
+    <div class="span2">5</div>
+    <div class="span2">7</div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2">4</div>
+    <div class="span5">Loup-Garou</div>
+    <div class="span2">8</div>
+    <div class="span2">9</div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span2">5 ou 6</div>
+    <div class="span5">Vous ne rencontrez aucune créature</div>
+    <div class="span2">&nbsp;</div>
+    <div class="span2">&nbsp;</div>
+    </div>
+</div>

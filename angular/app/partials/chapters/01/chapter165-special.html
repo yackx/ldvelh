@@ -1,0 +1,71 @@
+<div id="chapter165-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>165</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <!-- Test your luck -->
+        <div class="row-fluid">
+            <div class="span12">
+                <p>Vous devez être chanceux 3 fois d'affilée. Tentez votre chance.</p>
+                <p>Chance : {{vitals.luck}}</p>
+                <p>Endurance : {{vitals.stamina}}</p>
+
+                <p ng-show="started && !specialActions.ch165.attempts[specialActions.ch165.idx].lucky">
+                    Vous êtes malchanceux
+                </p>
+
+                <p ng-show="started && specialActions.ch165.attempts[specialActions.ch165.idx].inARow == 1">
+                    Vous êtes une première fois chanceux
+                </p>
+
+                <p ng-show="started && specialActions.ch165.attempts[specialActions.ch165.idx].inARow == 2">
+                    Vous êtes chanceux deux fois d'affilée
+                </p>
+
+                <p ng-show="started && specialActions.ch165.attempts[specialActions.ch165.idx].inARow == 3">
+                    Vous êtes chanceux trois fois d'affilée
+                </p>
+
+                <p ng-show="vitals.luck <= 0">
+                    Vous avez perdu tous vos points de chance
+                </p>
+
+                <p ng-show="vitals.stamina <= 0">
+                    Vous êtes mort
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+
+        <!-- Test luck -->
+        <span class="btn btn-primary"
+              ng-click="decreaseLuck(); specialActions.ch165.idx=specialActions.ch165.idx+1; vitals.stamina=specialActions.ch165.attempts[specialActions.ch165.idx].stamina; started = true;"
+              ng-show="specialActions.ch165.attempts[specialActions.ch165.idx].inARow != 3 && vitals.luck > 0">
+            <i class="icon-question-sign icon-white"></i>&nbsp;
+            Tenter la Chance
+        </span>
+
+        <!-- Failure -->
+        <span class="btn btn-danger" data-dismiss="modal"
+              ng-show="vitals.luck <= 0 || vitals.stamina <= 0">
+            <i class="icon-thumbs-down icon-white"></i>&nbsp;
+            Vous avez échoué
+        </span>
+
+        <!-- Success -->
+        <span class="btn btn-primary" data-dismiss="modal"
+              ng-show="specialActions.ch165.attempts[specialActions.ch165.idx].inARow == 3">
+            <i class="icon-thumbs-up icon-white"></i>&nbsp;
+            Vous avez réussi
+        </span>
+
+    </div>
+
+</div>

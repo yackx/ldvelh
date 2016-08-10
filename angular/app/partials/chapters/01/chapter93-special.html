@@ -1,0 +1,53 @@
+<div id="chapter93-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>93</h2>
+    </div>
+
+    <div class="modal-body">
+
+
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez deux dés pour tenter d'ouvrir la porte. À chaque essai infructueux, vous perdrez
+                1 point d'ENDURANCE.
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                Vos point d'ENDURANCE : {{vitals.stamina}}
+            </div>
+        </div>
+
+        <div class="row-fluid" ng-show="result == 'success'">
+            <div class="span12">
+                Vous êtes parvenu à ouvrir la porte.
+            </div>
+        </div>
+
+        <div class="row-fluid" ng-show="result == 'fail'">
+            <div class="span12">
+                La porte n'a pas cédé. Vous pouvez ré-essayer.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary"
+              ng-show="result != 'success'"
+              ng-click="removeStamina(1); result = roll(2) < vitals.skills ? 'success' : 'fail'">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            Lancez un dé
+        </span>
+
+        <span class="btn btn-primary"
+              data-dismiss="modal">
+            <i class="icon icon-thumbs-up icon-white"></i>
+            Terminé
+        </span>
+    </div>
+
+</div>

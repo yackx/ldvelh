@@ -1,0 +1,42 @@
+<h1>4</h1>
+
+<p>
+    La porte de la cage est soigneusement verrouillée. Si vous possédez une clé, vous pouvez essayer d'en faire usage ;
+    pour cela, vous devrez soustraire 10 du chiffre que porte votre clé. Le nombre obtenu vous indiquera alors le numéro
+    du paragraphe auquel il faudra vous rendre. Si vous n'avez pas de clé, ou si vous ne souhaitez pas vous en servir,
+    vous pouvez recourir à l'une des Formules suivantes :
+</p>
+
+<div class="row-fluid">
+    <span class="span1">BLE</span>
+    <span class="span1">CLE</span>
+    <span class="span1">BAM</span>
+    <span class="span1">FOR</span>
+    <span class="span1">FIL</span>
+</div>
+
+<div class="row-fluid">
+    <span class="span1"><chapter to="443"></chapter></span>
+    <span class="span1"><chapter to="409"></chapter></span>
+    <span class="span1"><chapter to="320"></chapter></span>
+    <span class="span1"><chapter to="429"></chapter></span>
+    <span class="span1"><chapter to="360"></chapter></span>
+</div>
+
+
+<p>
+    Vous avez également la possibilité d'essayer de briser la serrure ; rendez-vous pour cela au <chapter to="142"></chapter>.
+</p>
+
+
+<form role="form">
+    <div class="form-inline form-group">
+        <div class="span12">
+            <input type="text" class="form-control" placeholder="Chapitre" ng-model="whereTo" style="width: 80px"/>
+            <button type="button" class="btn"
+                    ng-disabled="whereTo != 101 && whereTo != 44" ng-click="goToChapter(whereTo)">
+                <i class="icon-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</form>

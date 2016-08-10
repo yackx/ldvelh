@@ -1,0 +1,73 @@
+<div id="chapter277-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>270</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez deux dés pour déterminer le résultat de votre chute.
+            </div>
+        </div>
+
+        <div ng-show="rolled">
+            <div class="row-fluid">
+                <div class="span12">
+                    {{specialActions.ch277.dice1}} + {{specialActions.ch277.dice2}} = {{specialActions.ch277.total}}
+                </div>
+            </div>
+
+            <!-- Effects reduced by spell -->
+            <div class="row-fluid" ng-show="specialActions.ch424">
+                <div class="span12">
+                    Grâce aux effets de la formule prononcée au 424,
+                    le total est ramené à {{specialActions.ch277.effectiveTotal}}
+                </div>
+            </div>
+
+            <!-- 0, not hurt -->
+            <div class="row-fluid" ng-show="specialActions.ch277.lost === 0">
+                <div class="span12">
+                    Vous êtes chanceux, vous ne vous blessez pas.
+                </div>
+            </div>
+
+            <!-- 1, slightly hurt -->
+            <div class="row-fluid" ng-show="specialActions.ch277.lost === 1">
+                <div class="span12">
+                    Quelques contusions, vous perdez 1 point d'ENDURANCE.
+                </div>
+            </div>
+
+            <!-- 3, more damages -->
+            <div class="row-fluid" ng-show="specialActions.ch277.lost === 3">
+                <div class="span12">
+                    Vous vous tordez le bras, vous perdez 3 points d'ENDURANCE.
+                </div>
+            </div>
+
+            <!-- Dead -->
+            <div class="row-fluid" ng-show="rolled && specialActions.ch277.killed">
+                <div class="span12">
+                    Vous vous brisez le cou. Votre aventure se termine ici.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!rolled"
+              ng-click="rolled = true; vitals.stamina = vitals.stamina-specialActions.ch277.lost">
+            <i class="icon icon-random icon-white"></i>
+            Lancez deux dés
+        </span>
+
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="rolled">
+            <i class="icon icon-arrow-right icon-white"></i>
+            Ok
+        </span>
+    </div>
+
+</div>

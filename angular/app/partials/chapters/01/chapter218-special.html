@@ -1,0 +1,31 @@
+<div id="chapter218-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>218</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid" ng-show="!specialActions.ch218.robbed">
+            <div class="span12">
+                <p>Aucun objet ne vous a été volé!</p>
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="specialActions.ch218.robbed">
+            <div class="span12">
+                <p>Les objets suivants vous ont été volés :</p>
+                <div ng-repeat="item in specialActions.ch218.items">{{item | translate}}</div>
+            </div>
+                <p ng-show="specialActions.ch218.gold">
+                    Tout votre Or
+                </p>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" data-dismiss="modal">
+            Compris
+        </span>
+    </div>
+
+</div>

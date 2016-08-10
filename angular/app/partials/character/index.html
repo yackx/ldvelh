@@ -1,0 +1,49 @@
+<div id="character" class="container-fluid">
+
+    <h1>Personnage</h1>
+
+    <div class="row-fluid character-title">
+        <div class="span2"><span class="label">Habileté</span></div>
+        <div class="offset1 span2"><span class="label">Endurance</span></div>
+        <div class="offset1 span2"><span class="label">Chance</span></div>
+    </div>
+
+    <div class="row-fluid character-values">
+        <div class="span2">{{character.skills}}</div>
+        <div class="offset1 span2">{{character.stamina}}</div>
+        <div class="offset1 span2">{{character.luck}}</div>
+    </div>
+
+    <div class="btn-group" id="choose">
+        <a class="btn" ng-click="buildCharacterNormal()">Normal</a>
+        <a class="btn" ng-click="buildCharacterSkilled()">Habile</a>
+        <a class="btn" ng-click="buildCharacterStrong()">Costaud</a>
+        <a class="btn" ng-click="buildCharacterLucky()">Chanceux</a>
+        <a class="btn" ng-click="buildCharacterRandom()">Aléatoire</a>
+    </div>
+
+    <p ng-show="build == 'skilled'">
+        Un personnage avec une habilité légèrement supérieure à la moyenne.
+    </p>
+
+    <p ng-show="build == 'strong'">
+        Une endurance supérieure compense une habilité un peu moindre.
+    </p>
+
+    <p ng-show="build == 'lucky'">
+        La chance aidera ce personnage par ailleurs un peu moins habile et endurant.
+    </p>
+
+    <p ng-show="build == 'normal'">
+        Un personnage sans force ni faiblesse particulière.
+    </p>
+
+    <p ng-show="build == 'random'">
+        Généré au hasard des dés, pour le meilleur comme pour le pire.
+    </p>
+
+    <a class="btn btn-primary" ng-click="buildCharacter()" id="create">
+        <i class="icon icon-white icon-arrow-right"></i> Créer le personnage
+    </a>
+
+</div>

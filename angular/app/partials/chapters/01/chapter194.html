@@ -1,0 +1,26 @@
+<h1>194</h1>
+
+<p>
+    La lame de cette épée est particulièrement tranchante et si vous vous en servez pour combattre, chaque coup porté à
+    votre adversaire lui infligera une perte de 3 points d'ENDURANCE au lieu des 2 habituels. Si vous avez déjà une
+    épée, il vous faudra l'abandonner pour avoir le droit de
+    <a ng-click="addWeapon('weapon.superb.crafted', +0)">prendre cette nouvelle arme</a>.
+
+    Mais si vous pensez que cette épée n'est pas aussi bonne que la vôtre, vous pouvez demander au marchand de vous
+    <a data-target="#test-luck" data-toggle="modal">rembourser</a> et lui rendre l'arme
+    (<i>Tentez votre Chance</i> : si vous êtes Chanceux, le marchand
+    <a ng-click="adventure.gold=adventure.gold+6">acceptera</a>,
+    si vous êtes Malchanceux, il faudra vous résigner à prendre cette nouvelle épée et à abandonner
+    l'ancienne à moins que vous ne préfériez perdre l'argent dépensé) ; rendez-vous ensuite au
+    <chapter to="75"></chapter>.
+</p>
+
+<p class="integrator">
+    Si vous désirez conserver l'arme et que vous possédez déjà une épée, rayez-la de votre inventaire.
+</p>
+
+<p class="integrator">
+    Dans cette version, le tranchant supplémentaire de cette épée n'est pas prise en compte.
+</p>
+
+<!-- TODO Weapon inflicts more damages -->

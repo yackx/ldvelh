@@ -1,0 +1,31 @@
+<div id="buy-and-eat" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>{{adventure.chapter}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                <p>Vous pouvez manger pour {{eatGain().price}} pièces d'or.</p>
+                <p>C'est votre premier repas de la journée&nbsp;?<p/>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" data-dismiss="modal" ng-click="payAndGain(eatGain().price, eatGain().firstMeal)">
+            Oui (+{{eatGain().firstMeal}}pts)
+        </span>
+
+        <span class="btn btn-primary" data-dismiss="modal" ng-click="payAndGain(eatGain().price, eatGain().alreadyEaten)">
+            J'ai déjà mangé (+{{eatGain().alreadyEaten}}pts)
+        </span>
+
+        <span class="btn btn-default" data-dismiss="modal">
+            Ne pas manger
+        </span>
+    </div>
+
+</div>

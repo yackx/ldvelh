@@ -1,0 +1,37 @@
+<div id="chapter33-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>33</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="row-fluid" ng-show="adventure.gold >= 2">
+            <div class="span12">
+                Payez 2 Pièces d'Or.
+            </div>
+        </div>
+
+        <div class="row-fluid" ng-show="adventure.gold < 2">
+            <div class="span12">
+                Vous n'avez pas 2 Pièces d'Or.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="adventure.gold >= 2" ng-click="decreaseGold(2)">
+            <i class="icon-money icon-white"></i>&nbsp;
+            Payer
+        </span>
+
+        <span class="btn btn-default" data-dismiss="modal">
+            <i class="icon-signout icon-white"></i>
+            Annuler
+        </span>
+    </div>
+
+</div>

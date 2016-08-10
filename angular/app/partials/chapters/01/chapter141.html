@@ -1,0 +1,19 @@
+<h1>141</h1>
+
+<p>
+    Les étranges inscriptions sont écrites dans un langage qui vous est familier, mais l'état dans lequel se trouvent le
+    manche et la tête de la hache montre que l'arme a beaucoup servi et qu'elle risque fort de ne pas résister bien
+    longtemps. Le marchand en demande 7 Pièces d'Or.
+
+    Vous pouvez <a ng-click="buyWeapon('weapon.axe', -1, 7)">payer le prix
+    exigé et prendre la hache</a>, à moins que vous ne préfériez marchander. Si vous voulez marchander,
+    <a data-target="#chapter141-special" data-toggle="modal">lancez 2 dés</a>.
+
+    Si vous obtenez moins de 7, vous aurez fait la preuve que vous êtes dur en affaires et le marchand
+    acceptera de vous vendre la hache pour un nombre de Pièces
+    d'Or égal au chiffre donné par les dés. Si vous obtenez plus de 7, votre tentative de marchandage l'irrite et il
+    décide d'augmenter le prix de la hache : vous aurez, là aussi, à payer autant de Pièces d'Or que le chiffre donné
+    par les dés. Achetez l'arme au prix convenu, si vous le désirez, et rendez-vous ensuite au <chapter to="280"></chapter>.
+</p>
+
+<div ng-include src="'partials/chapters/01/chapter141-special.html'"></div>

@@ -1,0 +1,233 @@
+@import '../lib/bootstrap/less/variables.less';
+@import '../lib/bootstrap/less/mixins.less';
+
+@darkest: #2A2C05;
+@lightest: #EFE0B9;
+@middle: #E4B04A;
+@dark: #643B0F;
+@highlight: #B7521E;
+
+@linkColor: @highlight;
+@linkColorHover: darken(@linkColor, 15%);
+
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  color: @darkest;
+  background-color: @lightest;
+  background-image: url('../img/parchment-alpha75.jpg');
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  .badge {
+    background-color: @highlight;
+    color: @lightest;
+  }
+
+  .center {
+    float: none;
+    text-align: center;
+  }
+
+  .hero-unit {
+    background: rgb(238, 238, 238); /* Fall-back for browsers that don't support rgba */
+    background: rgba(238, 238, 238, .5);
+  }
+
+  #chapter-content {
+
+    padding-right: 1.5em;
+
+    h1 {
+      text-align: center;
+      padding-bottom: 0.5em;
+    }
+    h1:before { content: "\2014\a0" }   // mdash + nbsp
+    h1:after { content: "\a0\2014" }    // nbsp + mdash
+
+    img {
+      padding: 1.5em 0 1.5em 0;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    a {
+      font-weight: bold;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .creatures {
+      padding: 1em 0 1em 0;
+    }
+
+    .magic {
+      padding: 1em 0 1em 0;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  #book-spells {
+    text-align: justify;
+
+    h1 {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .spell, .spell-cost {
+      text-align: center;
+    }
+
+    .spell {
+      margin-top: 2em;
+      font-size: large;
+      font-weight: bolder;
+    }
+  }
+
+  #rules {
+    text-align: justify;
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    h2, h3, h4 {
+      text-align: center;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  #legend {
+    text-align: center;
+
+    h1 {
+      text-align: center;
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+
+  }
+
+  #adventure {
+    h1 {
+      text-align: center;
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    h3 {
+      vertical-align: middle;
+      margin-top: 1.0em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  #character {
+    h1 {
+      text-align: center;
+      margin-top: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    #choose {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    #create {
+      margin-top: 20px;
+    }
+  }
+
+  #intro {
+    h1 {
+      text-align: center;
+      margin-top: 1.0em;
+      margin-bottom: 1em;
+    }
+    h2, h3, h4 {
+      margin-top: 1.0em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  #authors {
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .character-title {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .character-values {
+    text-align: center;
+    font-size: 3em;
+  }
+
+  .integrator {
+    font-style: italic;
+    color: @dark;
+  }
+}
+
+
+// Bootstrap customization
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.navbar-inverse {
+
+  .navbar-inner {
+    #gradient > .vertical(@dark, @dark);
+    border-color: @navbarInverseBorder;
+  }
+
+  .nav .active > a,
+  .nav .active > a:hover,
+  .nav .active > a:focus {
+    color: @navbarInverseLinkColorActive;
+    background-color: @dark;
+  }
+}
+
+a {
+  color: @linkColor;
+  text-decoration: none;
+}
+
+a:hover {
+  color: @linkColorHover;
+  text-decoration: underline;
+}

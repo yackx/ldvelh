@@ -1,0 +1,83 @@
+<div id="chapter407-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>407</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <!-- Start her -->
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez deux dés pour chacun des gobelins.
+            </div>
+        </div>
+
+        <!-- Dices rolled -->
+        <div ng-show="rolled">
+
+            <!-- Second goblin -->
+            <div class="row-fluid">
+                <div class="span12">
+                    Deuxième Gobelin : HABILETÉ : 6
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    {{specialActions.ch407.goblin2.dice1}} + {{specialActions.ch407.goblin2.dice2}}
+                    = {{specialActions.ch407.goblin2.total}}
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12" ng-show="specialActions.ch407.goblin2.flees">
+                    Le deuxième gobelin s'enfuit
+                </div>
+                <div class="span12" ng-show="!specialActions.ch407.goblin2.flees">
+                    Le deuxième gobelin reste pour combattre
+                </div>
+            </div>
+
+            <!-- Third goblin -->
+            <div class="row-fluid">
+                <div class="span12">
+                    Troisième Gobelin : HABILETÉ : 5
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    {{specialActions.ch407.goblin3.dice1}} + {{specialActions.ch407.goblin3.dice2}}
+                    = {{specialActions.ch407.goblin3.total}}
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12" ng-show="specialActions.ch407.goblin3.flees">
+                    Le troisième gobelin s'enfuit
+                </div>
+                <div class="span12" ng-show="!specialActions.ch407.goblin3.flees">
+                    Le troisième gobelin reste pour combattre
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+
+        <!-- Roll dices -->
+        <span class="btn btn-primary"
+              ng-click="rolled = true" ng-show="!rolled">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            Lancez les dés
+        </span>
+
+        <!-- Done -->
+        <span class="btn btn-primary" data-dismiss="modal"
+              ng-show="rolled">
+            <i class="icon-random icon-white"></i>&nbsp;
+            Ok
+        </span>
+
+    </div>
+
+</div>

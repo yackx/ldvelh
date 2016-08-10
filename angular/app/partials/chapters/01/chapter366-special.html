@@ -1,0 +1,58 @@
+<div id="chapter366-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>366</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez un dé pour déterminer les morsures de serpent.
+            </div>
+        </div>
+
+        <div ng-show="specialActions.ch366.rolled">
+            <div class="row-fluid" ng-show="chapter366ShowLostEndurance()">
+                <div class="span12">
+                    Vous perdez {{specialActions.ch366.dice}}pts d'ENDURANCE
+                </div>
+            </div>
+            <div class="row-fluid" ng-show="chapter366ShowDraw6()">
+                <div class="span12">
+                    Vous avez tiré un 6. Tentez à présent votre chance.
+                </div>
+            </div>
+            <div class="row-fluid" ng-show="chapter366Lost6()">
+                <div class="span12">
+                    Vous avez malgré tout été chanceux, mais vous perdez 6 points d'ENDURANCE.
+                </div>
+            </div>
+            <div class="row-fluid" ng-show="chapter366Dead()">
+                <div class="span12">
+                    Vous n'êtes pas chanceux. Le venin du serpent vous tue.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!specialActions.ch366.rolled"
+              ng-click="chapter366Roll()">
+            <i class="icon icon-random icon-white"></i>
+            Lancez un dé
+        </span>
+
+        <span class="btn btn-primary" ng-show="chapter366ShowTestLuck()"
+              ng-click="chapter366TestLuck()">
+            <i class="icon icon-random icon-white"></i>
+            Tentez votre chance
+        </span>
+
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="chapter366ShowDone()">
+            <i class="icon icon-arrow-right icon-white"></i>
+            Ok
+        </span>
+    </div>
+
+</div>

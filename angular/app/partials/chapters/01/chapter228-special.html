@@ -1,0 +1,48 @@
+<div id="chapter228-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>228</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid" ng-show="!rolled">
+            <div class="span12">
+                Lancez 3 dés&hellip;
+            </div>
+        </div>
+        <div ng-show="rolled">
+            <div class="row-fluid">
+                <div class="span12">
+                    Vos point d'habileté : {{vitals.skills}}
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    Les dés :
+                    <span ng-repeat="dice in specialActions.ch228.dices track by $index">
+                        &nbsp;{{dice}}&nbsp;
+                        <span ng-show="!$last"> + </span>
+                    </span>
+                    = {{specialActions.ch228.total}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!rolled" ng-click="rolled = true">
+            <i class="icon-random icon-white"></i>
+            Lancez les dés
+        </span>
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="rolled && specialActions.ch228.success">
+            <i class="icon-thumbs-up icon-white"></i>
+            Réussi
+        </span>
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="rolled && !specialActions.ch228.success">
+            <i class="icon-thumbs-down icon-white"></i>
+            Échoué
+        </span>
+    </div>
+
+</div>

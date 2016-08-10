@@ -1,0 +1,17 @@
+<h1>182</h1>
+
+<p>
+    Qu'allez-vous donner à cet homme ? Si vous possédez une hache, rendez-vous au paragraphe correspondant au numéro
+    gravé dessus. Si vous n'avez pas de hache, vous devrez lui donner autre chose. Rendez-vous au <chapter to="29"></chapter>.
+</p>
+
+<form role="form">
+    <div class="form-inline form-group">
+        <div class="span12">
+            <input type="text" class="form-control" placeholder="Numéro" ng-model="whereTo" style="width: 80px"/>
+            <button type="button" class="btn" ng-disabled="whereTo != 233" ng-click="goToChapter(233)">
+                <i class="icon-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</form>

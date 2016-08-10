@@ -1,0 +1,66 @@
+<div id="chapter23-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>23</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <!-- On the menu -->
+        <div class="row-fluid">
+            <div class="span12">
+                Tentez votre chance ou lancez simplement un dés.
+            </div>
+        </div>
+
+        <!-- Lucky -->
+        <div class="row-fluid" ng-show="testedLuck && specialActions.ch23.lucky">
+            <div class="span12">
+                Vous êtes chanceux. Rendez-vous au 167.
+            </div>
+        </div>
+
+        <!-- Unlucky -->
+        <div class="row-fluid" ng-show="testedLuck && !specialActions.ch23.lucky">
+            <div class="span12">
+                Vous êtes malchanceux. Lancez à présent un dés.
+            </div>
+        </div>
+
+        <!-- Rolled a dice -->
+        <div class="row-fluid" ng-show="rolledDice">
+            <div class="span12">
+                <p>Le dés tombe sur <strong>{{specialActions['ch23'].roll}}</strong>.</p>
+                <p>Rendez-vous au <strong>{{specialActions['ch23'].rollTarget}}</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+
+        <!-- Test luck -->
+        <span class="btn btn-primary"
+              ng-click="decreaseLuck(); testedLuck = true" ng-show="!testedLuck && !rolledDice">
+            <i class="icon-question-sign icon-white"></i>&nbsp;
+            Tenter la Chance
+        </span>
+
+        <!-- Roll a dice -->
+        <span class="btn btn-primary"
+              ng-click="rolledDice = true" ng-show="!specialActions['ch23'].lucky && !rolledDice">
+            <i class="icon-random icon-white"></i>&nbsp;
+            Lancer un dés
+        </span>
+
+        <!-- Done -->
+        <span class="btn btn-primary" data-dismiss="modal"
+              ng-show="rolledDice || (testedLuck && specialActions['ch23'].lucky)">
+            <i class="icon-random icon-white"></i>&nbsp;
+            Ok
+        </span>
+
+    </div>
+
+</div>

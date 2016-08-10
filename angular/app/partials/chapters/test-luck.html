@@ -1,0 +1,40 @@
+<!--
+Include this modal without any need for pre or post processing.
+Luck will be pre-tested and decreased by this modal.
+-->
+<div id="test-luck" class="modal fade hide" ng-init="pretestLuck()">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>{{adventure.chapter}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid" ng-show="!rolled">
+            <div class="span12">
+                Tentez votre chance&hellip;
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="rolled">
+            <div class="span12" ng-show="specialActions.lucky">
+                Vous êtes chanceux.
+            </div>
+            <div class="span12" ng-show="!specialActions.lucky">
+                Vous n'êtes pas chanceux.
+            </div>
+        </div>
+
+        <!-- TODO Show dices -->
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!rolled" ng-click="rolled = true; decreaseLuck()">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            Lancez les dés
+        </span>
+        <span class="btn btn-primary" ng-show="rolled" data-dismiss="modal">
+            Ok
+        </span>
+    </div>
+
+</div>

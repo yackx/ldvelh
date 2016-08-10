@@ -1,0 +1,50 @@
+<div id="fight" class="modal fade hide">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>Combat</h2>
+    </div>
+
+    <div class="modal-body">
+
+        <div id="fight-col-header" class="row-fluid">
+            <div class="span4">&nbsp;</div>
+            <div class="span3">Habilité</div>
+            <div class="span3">Endurance</div>
+        </div>
+
+        <div class="row-fluid" ng-repeat='enemy in fight.enemies'>
+            <div class="span4">{{enemy.name | translate}}</div>
+            <div class="span3">{{enemy.skills}}</div>
+            <div class="span3">{{enemy.stamina}}</div>
+        </div>
+
+        <div class="row-fluid" ng-show="fight.sideKick">
+            <div class="span4">{{fight.sideKick.name | translate}}</span></div>
+            <div class="span3">{{fight.sideKick.skills}}</div>
+            <div class="span3">{{fight.sideKick.stamina}}</div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span4">Vous</span></div>
+            <div class="span3">{{vitals.skills}}</div>
+            <div class="span3">{{vitals.stamina}}</div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-danger" ng-show="fight.fighting && !isDead()" ng-click="assault()">
+            <i class="icon-screenshot icon-white"></i>&nbsp;
+            Assaut
+        </span>
+        <span class="btn btn-danger" ng-show="isDead()" data-dismiss="modal">
+            <i class="icon-thumbs-down icon-white"></i>&nbsp;
+            Tué au combat
+        </span>
+        <span class="btn btn-primary" ng-show="!fight.fighting" data-dismiss="modal">
+            <i class="icon-thumbs-up icon-white"></i>&nbsp;
+            Combat terminé
+        </span>
+    </div>
+
+</div>

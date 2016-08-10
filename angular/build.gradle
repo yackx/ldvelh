@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'de.obqo.gradle:gradle-lesscss-plugin:1.0-1.3.3'
+    }
+}
+
+task cleanup(type: Delete) {
+    delete 'publish'
+}
+
+task copyTask(type: Sync) {
+    from 'app'
+    into 'publish'
+
+    exclude 'css'
+    exclude 'lib/less'
+    exclude 'lib/bootstrap/less'
+}
+
+task cleanDevReferences << {
+    File index = new File('publish/index.html')
+    text = index.text
+
+    text = text.replace(
+            'rel="stylesheet/less" href="css/ldvelh.less"',
+            'rel="stylesheet" href="css/ldvelh.css"')
+    text = text.replace(
+            'rel="stylesheet/less" href="lib/bootstrap/less/bootstrap.less"',
+            'rel="stylesheet" href="lib/bootstrap/less/bootstrap.css"')
+
+    // Removals
+    text = text.replace('<script src="lib/less/less.js"></script>', '')
+    text = text.replace('<script src="lib/angular-mocks/angular-mocks.js"></script>', '')
+
+    index.write text
+}
+
+task zip(type: Zip) {
+    from 'publish'
+    baseName 'ldvelh'
+    destinationDir new File('build')
+}
+
+task scp(type: Exec) {
+    commandLine 'scp', 'build/ldvelh.zip', 'ubuntu@ec2-54-228-244-23.eu-west-1.compute.amazonaws.com:/home/ubuntu'
+}
+
+apply plugin: 'lesscss'
+
+lesscss {
+    source = fileTree('app') {
+        include 'css/ldvelh.less'
+        include 'lib/bootstrap/less/bootstrap.less'
+    }
+    dest = 'publish'
+    compress = false
+}
+
+defaultTasks 'copyTask', 'cleanDevReferences', 'lesscss', 'zip'

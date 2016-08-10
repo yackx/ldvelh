@@ -1,0 +1,59 @@
+<div id="chapter258-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>258</h2>
+    </div>
+
+    <div class="modal-body">
+
+
+        <div class="row-fluid">
+            <div class="span12">
+                Tentez votre chance pour obtenir la clé. À chaque essai infructueux, vous perdrez la moitié
+                de vos points d'ENDURANCE.
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span3">
+                ENDURANCE:
+            </div>
+            <div class="span2">
+                {{vitals.stamina}}
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span3">
+                CHANCE:
+            </div>
+            <div class="span2">
+                {{vitals.luck}}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary"
+              ng-show="chapter258ShowTestLuck()"
+              ng-click="chapter258Try()">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            Tentez votre chance
+        </span>
+        <span class="btn btn-primary"
+              ng-show="chapter258LuckyNow()"
+              data-dismiss="modal">
+            <i class="icon icon-thumbs-up icon-white"></i>
+            Vous avez la clé
+        </span>
+        <span class="btn btn-primary"
+              ng-show="chapter258ShowFailure()"
+              data-dismiss="modal">
+            <i class="icon icon-thumbs-down icon-white"></i>
+            Vous avez échoué
+        </span>
+    </div>
+
+</div>

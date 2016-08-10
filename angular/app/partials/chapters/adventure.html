@@ -1,0 +1,46 @@
+<h3>Santé</h3>
+
+<div class="row-fluid">
+    <div class="span5">Endurance</div>
+    <div class="span2"><span id="stamina" class="badge">{{vitals.stamina}}</span></div>
+</div>
+<div class="row-fluid">
+    <div class="span5">Habilité</div>
+    <div class="span2"><span id="skill" class="badge">{{vitals.skills}}</span></div>
+</div>
+<div class="row-fluid">
+    <div class="span5">Chance</div>
+    <div class="span2"><span id="luck" class="badge">{{vitals.luck}}</span></div>
+</div>
+
+<h3>Sac à dos</h3>
+
+<div class="row-fluid" ng-repeat="(item, howMany) in backpack">
+    <div class="span7" on-mouse-enter="showDelete = true" on-mouse-leave="showDelete = false">
+        <span>{{item | translate}}</span>
+        <span ng-show="howMany > 1"> ({{howMany}})</span>
+        <i class="icon icon-remove clickable" ng-show="showDelete" ng-click="removeItem(item)"></i>
+    </div>
+</div>
+
+<h3>Armes</h3>
+
+<div class="row-fluid" ng-repeat="(weapon, extraSkills) in weapons">
+    <div class="span7">
+        <span>{{weapon | translate}}</span>
+        <span ng-show="extraSkills > 0"> (+{{extraSkills}})</span>
+        <span ng-show="extraSkills < 0"> ({{extraSkills}})</span>
+    </div>
+</div>
+<div class="row-fluid" ng-show="noWeapon()">
+    <div class="span7">
+        <span>Pas d'arme (-4)</span>
+    </div>
+</div>
+
+<h3>Or</h3>
+
+<div class="row-fluid">
+    <div class="span5">Pièces</div>
+    <div class="span2"><span id="gold" class="badge">{{adventure.gold}}</span></div>
+</div>

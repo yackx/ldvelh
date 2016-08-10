@@ -1,0 +1,44 @@
+<div id="chapter270-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>270</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                Lancez un dés pour déterminer les blessures que vous inflige les abeilles.
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="rolled">
+            <div class="span12">
+                {{specialActions.ch270.dice}}
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="rolled && specialActions.ch270.lost == 0">
+            <div class="span12">
+                Vous êtes chanceux, les abeilles ne vous piquent pas.
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="rolled && specialActions.ch270.lost > 0">
+            <div class="span12">
+                Les abeilles vous font perdre {{specialActions.ch270.lost}} points d'endurance
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!rolled"
+              ng-click="rolled = true; vitals.stamina = vitals.stamina-specialActions.ch270.lost">
+            <i class="icon icon-random icon-white"></i>
+            Lancez un dés
+        </span>
+
+        <span class="btn btn-primary" data-dismiss="modal" ng-show="rolled">
+            <i class="icon icon-arrow-right icon-white"></i>
+            Ok
+        </span>
+    </div>
+
+</div>

@@ -1,0 +1,24 @@
+<h1>114</h1>
+
+<p>
+    &laquo;Il y a quatre jours, dit-elle, un autre voyageur est venu me rendre visite ; j'ai surpris ce gredin en train
+    de feuilleter mes livres et il s'est enfui en emportant cette page ; c'était sans doute un sorcier pour avoir réussi
+    à disparaître aussi vite. Je lui ai jeté un Sort de Vieillesse, mais sans effet, apparemment.&raquo; Elle vous
+    remercie de lui avoir rapporté la page et vous propose de vous faire bénéficier de la Formule Magique qu'elle
+    contient. Si vous le désirez, elle vous débarrassera du Marmouscule. Vous retrouverez alors vos pouvoirs magiques et
+    vous pourrez à nouveau utiliser les Formules que vous connaissez. Si cette offre vous intéresse, additionnez le
+    numéro de la page et celui qui doit logiquement figurer sur la page suivante puis rendez-vous au paragraphe
+    correspondant au résultat obtenu. Si vous n'avez pas noté le numéro de la page, ou si vous voulez garder auprès de
+    vous Jann le Marmouscule, vous pouvez partir et poursuivre votre chemin en vous rendant au <chapter to="232"></chapter>.
+</p>
+
+<form role="form">
+    <div class="form-inline form-group">
+        <div class="span12">
+            <input type="text" class="form-control" placeholder="Numéro" ng-model="whereTo" style="width: 80px"/>
+            <button type="button" class="btn" ng-disabled="whereTo != 205" ng-click="goToChapter(205)">
+                <i class="icon-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</form>

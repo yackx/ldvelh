@@ -1,0 +1,28 @@
+<div id="eat-yesterday" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>{{adventure.chapter}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12">
+                <p>Avez-vous mangé hier&nbsp;?</p>
+                <p>Si ce n'est pas le cas, vous êtes affamé et vous perdez 3 points d'ENDURANCE.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-danger" data-dismiss="modal" ng-click="removeStamina(3)">
+            <i class="icon-thumbs-down icon-white"></i>
+            Affamé (-3pts)
+        </span>
+        <span class="btn btn-primary" data-dismiss="modal">
+            <i class="icon-thumbs-up icon-white"></i>
+            J'ai mangé hier
+        </span>
+    </div>
+
+</div>

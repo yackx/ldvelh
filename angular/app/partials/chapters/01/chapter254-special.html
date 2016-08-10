@@ -1,0 +1,33 @@
+<div id="chapter254-special" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>254</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid" ng-show="specialActions.ch254 == 68">
+            <div class="span12">
+                Vous monterez le flanc de la colline jusqu'à ce que vous arriviez sur un chemin.
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="specialActions.ch254 == 13">
+            <div class="span12">
+                Vous continuez tout droit jusqu'à ce que, là encore, vous parveniez sur un chemin.
+            </div>
+        </div>
+        <div class="row-fluid" ng-show="specialActions.ch254 == 98">
+            <div class="span12">
+                Vous descendrez la colline jusqu'à un sentier fréquemment emprunté par les voyageurs
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" data-dismiss="modal">
+            <i class="icon-arrow-right icon-white"></i>
+            {{specialActions.ch254}}
+        </span>
+    </div>
+
+</div>

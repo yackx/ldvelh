@@ -1,0 +1,48 @@
+<div id="roll-dices" class="modal fade hide">
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">×</button>
+        <h2>{{adventure.chapter}}</h2>
+    </div>
+
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="span12" ng-show="diceDetails.howMany == 1">
+                Lancez un dé&hellip;
+            </div>
+            <div class="span12" ng-show="diceDetails.howMany > 1">
+                Lancez {{diceDetails.howMany}} dés&hellip;
+            </div>
+        </div>
+
+        <div class="row-fluid" ng-show="rolled && diceDetails.howMany > 1">
+            <div class="span12">
+                <span ng-repeat="dice in diceDetails.rolls track by $index">
+                    {{dice}}
+                    <span ng-show="!$last"> + </span>
+                </span>
+                = <strong>{{diceDetails.total}}</strong>
+            </div>
+        </div>
+
+        <div class="row-fluid" ng-show="rolled && diceDetails.howMany == 1">
+            <div class="span2">
+               <strong>{{diceDetails.total}}</strong>
+            </div>
+        </div>
+
+        <!-- TODO Show dices -->
+    </div>
+
+    <div class="modal-footer" style="text-align: left;">
+        <span class="btn btn-primary" ng-show="!rolled" ng-click="rolled = true">
+            <i class="icon icon-random icon-white"></i>&nbsp;
+            <span ng-show="diceDetails.howMany == 1">Lancez un dé</span>
+            <span ng-show="diceDetails.howMany > 1">Lancez les dés</span>
+        </span>
+        <span class="btn btn-primary" ng-show="rolled" data-dismiss="modal">
+            Ok
+        </span>
+    </div>
+
+</div>

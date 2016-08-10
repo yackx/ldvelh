@@ -1,0 +1,29 @@
+<div class="row-fluid">
+
+    <div class="span3">
+        <div ng-include src="adventurePartial"></div>
+        <div ng-include src="'partials/chapters/fight.html'"></div>
+        <div ng-include src="'partials/chapters/test-luck.html'"></div>
+        <div ng-include src="'partials/chapters/roll-dices.html'"></div>
+        <div ng-include src="'partials/chapters/eat.html'"></div>
+        <div ng-include src="'partials/chapters/eat-yesterday.html'"></div>
+        <div ng-include src="'partials/chapters/buy-and-eat.html'"></div>
+    </div>
+
+    <div id="chapter-content" class="span9">
+        <div ng-include src="templateUrl"></div>
+    </div>
+
+</div>
+
+<div id="debug" style="font-family: Arial; font-size: smaller; margin-top: 5em;">
+    <btn class="btn" ng-click="debug = !debug">DEBUG</btn>
+    <div ng-show="debug" ng-click="debug = !debug" style="border-top: 1px solid; margin-top: 1em;">
+        <div>av {{adventure}}</div>
+        <div>bp {{backpack}}</div>
+        <div>weapons {{weapons}}</div>
+        <div>sa {{specialActions}}</div>
+        <div>fight {{fight}}</div>
+        <div>vit {{vitals}}</div>
+    </div>
+</div>
