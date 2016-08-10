@@ -21,9 +21,10 @@ task copyTask(type: Sync) {
 }
 
 task cleanDevReferences << {
-    File index = new File('publish/index.html')
-    text = index.text
+    def index = new File('publish/index.html')
+    def text = index.text
 
+    // less to css
     text = text.replace(
             'rel="stylesheet/less" href="css/ldvelh.less"',
             'rel="stylesheet" href="css/ldvelh.css"')
@@ -31,7 +32,7 @@ task cleanDevReferences << {
             'rel="stylesheet/less" href="lib/bootstrap/less/bootstrap.less"',
             'rel="stylesheet" href="lib/bootstrap/less/bootstrap.css"')
 
-    // Removals
+    // remove local js (for dev only)
     text = text.replace('<script src="lib/less/less.js"></script>', '')
     text = text.replace('<script src="lib/angular-mocks/angular-mocks.js"></script>', '')
 
