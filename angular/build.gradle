@@ -45,7 +45,7 @@ task zip(type: Zip) {
 }
 
 task scp(type: Exec) {
-    commandLine 'scp', 'build/ldvelh.zip', 'ubuntu@ec2-54-228-244-23.eu-west-1.compute.amazonaws.com:/home/ubuntu'
+    commandLine 'scp', 'build/ldvelh.zip', 'ubuntu@someinstance.amazonaws.com:/home/ubuntu'
 }
 
 apply plugin: 'lesscss'
