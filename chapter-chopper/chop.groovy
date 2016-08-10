@@ -1,3 +1,6 @@
+/**
+ * Read a full book in html format, extract and isolate each chapter.
+ */
 class ChopChop {
 
     /** Reusable writer */
@@ -9,13 +12,16 @@ class ChopChop {
     /** Chapters to skip */
     def chaptersToSkip
 
-
-    /* Multiple enemies occur on several lines, so we maintain a processing state.
-           <p><font face="Courier New" size="2">                HABILETÉ   ENDURANCE</font></p>
-           <p><font face="Courier New" size="2">Premier BANDIT      7           6</font></p>
-           <p><font face="Courier New" size="2">Deuxième BANDIT     7           8</font></p>
-    */
+    /**
+     * Multiple enemies occur on several lines, so we maintain a processing state.
+     * <code>
+     *      <p><font face="Courier New" size="2">                HABILETÉ   ENDURANCE</font></p>
+     *      <p><font face="Courier New" size="2">Premier BANDIT      7           6</font></p>
+     *      <p><font face="Courier New" size="2">Deuxième BANDIT     7           8</font></p>
+     * </code>
+     */
     boolean stateMultipleEnemies = false
+
     List<Enemy> enemies = []
 
 
@@ -45,7 +51,7 @@ class ChopChop {
     }
 
     /**
-     * Build rows for enemies.
+     * Build rows for enemies
      */
     String buildEnemies(enemies) {
         StringBuilder sb = new StringBuilder('<div class="row-fluid">')
@@ -74,6 +80,9 @@ class ChopChop {
         return matcher.matches() ? new Integer(matcher[0][1]) : null
     }
 
+    /**
+     * Write a line of a chapter to file
+     */
     void emit(line) {
         chapterWriter << line << separator
     }
@@ -82,7 +91,7 @@ class ChopChop {
      * Process a line (images, links, ...)
      */
     void next(line) {
-        
+
         // Multiple enemies: process next enemy
         if (stateMultipleEnemies) {
             def anEnemyRegex = /.*font face="Courier New".*>(.*) *([0-9]+) *([0-9]+)<\/font>.*/
