@@ -1,10 +1,10 @@
-! LDVELH
+# LDVELH
 
 Pour jouer en ligne, [c'est ici](http://ldvelh.ackx.net) － To play online, [click here](http://ldvelh.ackx.net) \[fr\]
 
 ___
 
-!! At A Glance
+## At A Glance
 
 `ldvelh` is an attempt to revive an [adventure gamebook](https://en.wikipedia.org/wiki/Gamebook#Adventure_gamebooks) in HTML form. It stands for «Livre Dont Vous Êtes Le Héros», the French translation of the genre.
 
@@ -12,7 +12,9 @@ It is focused on the [Sorcery!](https://en.wikipedia.org/wiki/Sorcery!) series b
 
 Unlike other franchises, this projects aims at keeping things as close as possible to the original paper form: text and original illustrations only. No added visual effects or modern gimmicks were added. Think of it as a glorified paper version: no need to keep your adventure sheet up to date, or to manage your backpack items, or to roll the dices. The applications takes care of it for you. Turning to a chapter is now achieved by clicking on a link.
 
-!! Project Layout
+## Project
+
+### Layout
 
 Divided in two modules:
 
@@ -23,7 +25,7 @@ The main application is an `AngularJS` application with `bootstrap` and `undersc
 
 There is no server: everything runs in the user browser, using local storage to store progress.
 
-!! Toolchain
+### Toolchain
 
 * Gradle 2.13
 * karma
@@ -33,7 +35,7 @@ Note that the tools usually found around web/angular development (bower, gulp, g
 
 All libraries are stored and committed to avoid build and dependencies hell. Any local webserver to serve the content will do.
 
-!! Building the Project
+### Build
 
 To build the project, simply run `gradle`:
 
@@ -45,7 +47,7 @@ The resulting output will be generated in `angular/publish`. Let your local webs
 
 then open a browser pointing at [localhost:8080](http://localhost:8080).
 
-!! Running the tests
+### Run the tests
 
 Tests can be found under `angular/test/unit`, for `ng` controllers and services.
 
@@ -53,7 +55,7 @@ Tests can be found under `angular/test/unit`, for `ng` controllers and services.
 
 However, given the fact that the application was written a couple of years ago and that the tools have evolved, running the tests may be challenging (a.k.a. I couldn't run them anymore when I decided to release the code).
 
-!! Contribute
+## Contribute
 
 You are more then welcome to contribute! Things you can do:
 
@@ -64,7 +66,7 @@ You are more then welcome to contribute! Things you can do:
 * Migrate the toolchain to a more conventional stack (bower, gulp, grunt, npm, ...)
 * Add the next book! (although we'd better tighten the code base first!)
 
-!!! How to
+### How to
 
 Improvements can be delivered as pull requests:
 
