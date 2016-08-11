@@ -7,6 +7,7 @@
 
 .gradle/
 /angular/node_modules
+/angular/logs
 JasmineAdapter-1.1.2.js
 jasmine-1.1.0.js
 bower_components/
