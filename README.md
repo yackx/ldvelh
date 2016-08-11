@@ -78,3 +78,7 @@ Improvements can be delivered as pull requests:
 Admittedly, the code base may not always be in phase with these guidelines.
 
 For non-trivial changes, it is a good idea to first create a new issue and discuss how to tackle it prior to the actual implementation.
+
+## License
+
+See [license file](LICENSE.md).
