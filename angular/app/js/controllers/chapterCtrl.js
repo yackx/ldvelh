@@ -11,6 +11,7 @@ controllersModule.controller('chapterCtrl', [
         });
 
         $scope.init = function() {
+            $log.log("Loading chapter")
             var chapter;
             if ($routeParams.id) chapter = parseInt($routeParams.id);
 
@@ -50,7 +51,7 @@ controllersModule.controller('chapterCtrl', [
 
             $scope._mapAttributesFromService();
 
-            $log.log("chapter loaded", chapter);
+            $log.log("Chapter loaded", chapter);
         }
 
         /** Map attributes from services so that they are available in ctrl */
