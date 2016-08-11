@@ -4,7 +4,7 @@ Pour jouer en ligne, [c'est ici](http://ldvelh.ackx.net) － To play online, [cl
 
 ___
 
-## At A Glance
+## At a Glance
 
 `ldvelh` is an attempt to revive an [adventure gamebook](https://en.wikipedia.org/wiki/Gamebook#Adventure_gamebooks) in HTML form. It stands for «Livre Dont Vous Êtes Le Héros», the French translation of the genre.
 
