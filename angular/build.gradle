@@ -18,6 +18,8 @@ task copyTask(type: Sync) {
     exclude 'css'
     exclude 'lib/less'
     exclude 'lib/bootstrap/less'
+    exclude 'lib/angular/docs'
+    exclude 'lib/angular/i18n'
 }
 
 task cleanDevReferences << {
