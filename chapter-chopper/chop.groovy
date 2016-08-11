@@ -1,7 +1,16 @@
+#!/usr/bin/env groovy
+
+// This script has been used to quickly convert and existing HTML reproduction
+// of the first book in the serie. No guarantee it would word on the next books.
+//
+// As it is not intented to serve often, little effort has been put into this script.
+
+
 /**
  * Read a full book in html format, extract and isolate each chapter.
  * <p/>
  * The generated chapters serve as a basis for manual integration in the project.
+ * It still involves substantial manual processing though.
  */
 class ChopChop {
 
@@ -93,7 +102,6 @@ class ChopChop {
      * Process a line (images, links, ...)
      */
     void next(line) {
-
         // Multiple enemies: process next enemy
         if (stateMultipleEnemies) {
             def anEnemyRegex = /.*font face="Courier New".*>(.*) *([0-9]+) *([0-9]+)<\/font>.*/
@@ -187,7 +195,6 @@ class ChopChop {
     }
 
     void chopBook(fullBookFile, outputDirStr) {
-
         def currentChapter
         chapterWriter = new CharArrayWriter()
 
@@ -223,13 +230,10 @@ class ChopChop {
         println chaptersToSkip
         return chaptersToSkip.size()
     }
-
 }
 
 
-/**
- * Enemy
- */
+/** Enemy */
 class Enemy {
     String name
     int skills
@@ -246,14 +250,14 @@ class Enemy {
 
 
 
-
 // Source file, single html
-File book = new File('full.html')
+File book = new File('full1.html')
 
 // New output directory
 new File('chapters').mkdir()
+new File('chapters/01').mkdir()
 
 ChopChop chopper = new ChopChop()
-int alreadyProcessedCount = chopper.loadAlreadyProcessed(new File('already_processed.txt'))
+int alreadyProcessedCount = chopper.loadAlreadyProcessed(new File('already_processed_1.txt'))
 println "Skipping $alreadyProcessedCount chapters"
-chopper.chopBook(book, 'chapters')
+chopper.chopBook(book, 'chapters/01')
