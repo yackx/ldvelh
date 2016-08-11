@@ -17,7 +17,7 @@ controllersModule.controller('adventureCtrl', [
 
         /** Go to the given chapter */
         $scope.goToCurrentChapter = function() {
-            $log.log('Redirecting to current chapter');
+            $log.log('Redirecting to Chapter');
             $location.path('/chapter/');
         };
 

@@ -20,16 +20,15 @@ Storage.prototype.getObject = function(key) {
 var app = angular
     .module('myApp', [
         'myApp.filters', 'myApp.services', 'myApp.controllers', 'myApp.directives',
-        'ui.bootstrap', 'ngCookies', 'ngResource', 'ngRoute', 'ui.route', 'pascalprecht.translate' ])
-
+        'ui.bootstrap', 'ngCookies', 'ngResource', 'ngRoute', 'ui.route', 'pascalprecht.translate'
+    ])
     .config(['$routeProvider', function($routeProvider) {
-
         $routeProvider
             .when('/', { templateUrl: 'partials/home/index.html' })
             .when('/play', { templateUrl: 'partials/adventure/index.html', controller: 'adventureCtrl' })
             .when('/intro', { templateUrl: 'partials/home/intro.html' })
             .when('/character', { templateUrl: 'partials/character/index.html', controller: 'characterCtrl' })
-            .when('/chapter/:id', { templateUrl: 'partials/chapters/chapter.html', controller: 'chapterCtrl' })
+            .when('/chapter/:id?', { templateUrl: 'partials/chapters/chapter.html', controller: 'chapterCtrl' })
             .when('/rules', { templateUrl: 'partials/rules/original.html' })
             .when('/rules/original', { templateUrl: 'partials/rules/original.html' })
             .when('/rules/here', { templateUrl: 'partials/rules/here.html' })

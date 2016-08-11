@@ -8,9 +8,13 @@ module.exports = function(config){
 
     files : [
       'app/lib/angular/angular.js',
-      'app/lib/angular-mocks/angular-mocks.js',
+      'app/lib/angular-translate/angular-translate.js',
+      'app/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+      'app/lib/angular-ui-utils/modules/route.js',
       'app/lib/underscore/underscore-1.4.3.js',
       'app/js/**/*.js',
+
+      'test/lib/angular/angular-mocks.js',
       'test/unit/**/*Spec.js'
     ],
 
@@ -26,8 +30,8 @@ module.exports = function(config){
     browsers : ['PhantomJS'],
 
     plugins : [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
+            //'karma-chrome-launcher',
+            //'karma-firefox-launcher',
             'karma-phantomjs-launcher',
             'karma-jasmine'
     ],
