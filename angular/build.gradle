@@ -15,6 +15,7 @@ task copyTask(type: Sync) {
     from 'app'
     into 'publish'
 
+    exclude '.gradle'
     exclude 'css'
     exclude 'lib/less'
     exclude 'lib/bootstrap/less'
@@ -38,12 +39,6 @@ task cleanDevReferences << {
     index.write text
 }
 
-task zip(type: Zip) {
-    from 'publish'
-    baseName 'ldvelh'
-    destinationDir new File('build')
-}
-
 apply plugin: 'lesscss'
 
 lesscss {
@@ -55,4 +50,4 @@ lesscss {
     compress = false
 }
 
-defaultTasks 'copyTask', 'cleanDevReferences', 'lesscss', 'zip'
+defaultTasks 'copyTask', 'cleanDevReferences', 'lesscss'
