@@ -1,6 +1,6 @@
 # LDVELH
 
-Pour jouer en ligne, [c'est ici](https://play.sugoi.be/ldvelh) － To play online, [click here](https://play.sugoi.be/ldvelh) \[fr\]
+Pour jouer en ligne, [c'est ici](https://play.sugoi.be/ldvelh/) － To play online, [click here](https://play.sugoi.be/ldvelh/) \[fr\]
 
 ___
 
